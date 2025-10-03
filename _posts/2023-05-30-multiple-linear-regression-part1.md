@@ -96,10 +96,6 @@ this means that $\hat{\beta}$ should be the values that minimize the loss functi
 Recall from Calculus, for a convex function $f(x)$, the derivative of $f(x)$ gives us the slope of the line tangent to the point $x$ on the curve. Since the function is convex, at the minimum, the slope of the tangent line is equal to 0. To find the minimum point of the function, we find $x$ such that the derivative of the function at $x$ is equal to $0$. In other words, we take the derivative of $f(x)$, set it equal to $0$, and solve for $x$. 
 
 We can apply the same concept to find $\hat{\beta}$ that minimizes the loss function. Note that the loss function will have to be convex. We will omit the proof for this, but one can show that any lp norm is convex using the definition of a convex function and the triangle inequality. To find $\hat{\beta}$, we take the (partial) derivative of $L(y,\hat{y})$ with respect to $\beta$, set it equal to $0$, and solve for $\hat{\beta}$. 
-
-Let us first compute the derivative of the loss function: 
-
-  $$\frac{\partial}{\partial \beta} L(y,\hat{y}) =\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2 $$
   
 **Aside:** Before we go into the math, let's look at some properties that will be used.
 - $\lVert x \rVert_2 = x^{T}x$. To prove this, consider a vector $x \in \mathbb{R}^{n}, x = \begin{bmatrix}
@@ -138,10 +134,10 @@ x_n
 \end{bmatrix}} \\
 &= x_1 x_1 + x_2 x_2 + \cdots + x_n x_n \\
 &= x_1^2 + x_2^2 + \cdots + x_n^2
+&= \lVert x \rVert_2
 \end{align}
 $$
-  
-  So, $\lVert x \rVert_2 = x^{T}x$.
+
 - Transpose Properties:  
   - $(A + B)^T = A^T + B^T$  
   - $(AB)^T = B^T A^T$  
@@ -150,7 +146,9 @@ $$
   - $\frac{\partial}{\partial \beta} (a^T \beta) = a$ AND $\frac{\partial}{\partial \beta} (\beta^T a) = a$
   - $\frac{\partial}{\partial \beta} (\beta^T A \beta) = (A+A^T)\beta$. If $A$ is symmetric (i.e., if $A^T=A$), then $\frac{\partial}{\partial \beta} (\beta^T A \beta) = 2A\beta$
 
-Now that we have looked at the properties that we will use in the proof, let's look at the math!
+Now that we have looked at the properties, let us first compute the derivative of the loss function: 
+
+  $$\frac{\partial}{\partial \beta} L(y,\hat{y}) =\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2 $$
 
 $$\begin{align}
 \frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2  &= \frac{\partial}{\partial \beta} (y-X \beta)^T(y-X \beta)\\
