@@ -125,16 +125,6 @@ Let us first compute the derivative of the loss function:
   \vdots \\
   x_n
   \end{bmatrix} \\
-  &= 
-  \begin{bmatrix}
-  x_1 & x_2 & \cdots & x_n
-  \end{bmatrix}
-  \begin{bmatrix}
-  x_1 \\
-  x_2 \\
-  \vdots \\
-  x_n
-  \end{bmatrix} \\
   &= x_1 x_1 + x_2 x_2 + \cdots + x_n x_n \\
   &= x_1^2 + x_2^2 + \cdots + x_n^2
   \end{align}$$
