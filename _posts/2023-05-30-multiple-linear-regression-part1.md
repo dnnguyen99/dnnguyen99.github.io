@@ -100,7 +100,8 @@ We can apply the same concept to find $\hat{\beta}$ that minimizes the loss func
 **Aside:** Before we go into the math, let us look at some properties that will be used.
 - $\lVert x \rVert_2^2 = x^{T}x$.
   
-To prove this, consider an $n \times 1$ column vector $x \in \mathbb{R}^{n}$: $x =
+To prove this, consider an $n \times 1$ column vector $x \in \mathbb{R}^{n}$: 
+$x =
 {\begin{bmatrix}
 x_1 \\ 
 x_2 \\ 
