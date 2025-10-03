@@ -99,11 +99,9 @@ We can apply the same concept to find $\hat{\beta}$ that minimizes the loss func
   
 **Aside:** Before we go into the math, let us look at some properties that will be used.
 - $\lVert x \rVert_2^2 = x^{T}x$. To prove this, consider a vector $x \in \mathbb{R}^{n}, x = \begin{bmatrix}
-  x_0\\
-  x_1\\
-  \cdot\\
-  \cdot\\
-  \cdot\\
+  x_0 \\
+  x_1 \\
+  \vdots \\
   x_n
   \end{bmatrix}$ ($x$ is a column vector). By definition, the L2 norm of $x$ is $\lVert x \rVert_2 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$. Taking $\lVert x \rVert_2^2$ (squaring the L2 norm) gives $x_1^2 + x_2^2 + \cdots + x_n^2$. This is the same as the dot product $x^Tx$ since
   
@@ -146,12 +144,10 @@ $$
   - $\frac{\partial}{\partial \beta} (a^T \beta) = a$ AND $\frac{\partial}{\partial \beta} (\beta^T a) = a$
   - $\frac{\partial}{\partial \beta} (\beta^T A \beta) = (A+A^T)\beta$. If $A$ is symmetric (i.e., if $A^T=A$), then $\frac{\partial}{\partial \beta} (\beta^T A \beta) = 2A\beta$
 
-Back to our objective: we want to find $\hat{\beta}$ so that it is the minimizer of the loss function. To do this, let us first compute the partial derivative of the loss function $w.r.t$ $\beta$: 
-
-  $$\frac{\partial}{\partial \beta} L(y,\hat{y}) =\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2 $$
+Back to our objective: we want to find $\hat{\beta}$ so that it is the minimizer of the loss function. To do this, let us first compute the partial derivative of the loss function $L(y,\hat{y})$ $w.r.t$ $\beta$: 
 
 $$\begin{align}
-\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2  
+\frac{\partial}{\partial \beta} L(y,\hat{y}) &=\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2
 &= \frac{\partial}{\partial \beta} (y-X \beta)^T(y-X \beta)\\
 &= \frac{\partial}{\partial \beta} (y^T - \beta^T X^T) (y - X \beta) \quad \text{(transpose properties)} \\
 &= \frac{\partial}{\partial \beta} y^Ty  -y^TX \beta - \beta^T X^Ty + \beta^T X^T X \beta \quad \text{(distributing)}\\
@@ -159,7 +155,8 @@ $$\begin{align}
 &= -2X^Ty + 2X^T X \beta \quad \text{(partial deriv. properties)}
 \end{align}$$
 
-**Note:** Since $y^TX \beta \text{ is a scalar value, } y^TX \beta = (y^TX \beta)^T = \beta^TX^Ty$. So, $-y^TX \beta - \beta^T X^Ty = - 2 \beta^T X^T y$. 
+**Note:** Since $y^TX \beta \text{ is a scalar value. According to the Transpose Properties above, } y^TX \beta = (y^TX \beta)^T = \beta^TX^Ty$. So, $-y^TX \beta - \beta^T X^Ty = -y^TX \beta - y^TX \beta = - 2 \beta^T X^T y$. 
+
 To show that $y^TX \beta$ is a scalar, consider $y \in \mathbb{R}^n$ ($n\times 1$ column vector), $X \in \mathbb{R}^{n\times p}$ (our design matrix with dimensions $n \times p$), and $\beta \in \mathbb{R}^p$ ($p\times 1$ column vector). Now consider, the dimensions of the final result:
 $$y^TX\beta \in (n \times 1)^T(n \times p)(p \times 1) = (1 \times n)(n \times p)(p \times 1) = 1 \times 1$$
 
