@@ -100,6 +100,7 @@ We can apply the same concept to find $\hat{\beta}$ that minimizes the loss func
 Let us first compute the derivative of the loss function: 
 
   $$\frac{\partial}{\partial \beta} L(y,\hat{y}) =\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2 $$
+  
 **Aside:** Before we go into the math, let's look at some properties that will be used.
 - $\lVert x \rVert_2 = x^{T}x$. To prove this, consider a vector $x \in \mathbb{R}^{n}, x = \begin{bmatrix}
   x_0\\
