@@ -101,14 +101,15 @@ We can apply the same concept to find $\hat{\beta}$ that minimizes the loss func
 - $\lVert x \rVert_2^2 = x^{T}x$.
   
 To prove this, consider an $n \times 1$ column vector $x \in \mathbb{R}^{n}$:
-\[
-x = \begin{bmatrix}
+$$
+x =
+\begin{bmatrix}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
 \end{bmatrix}
-\]
+$$
 
 By definition, the L2 norm of $x$ is $\lVert x \rVert_2 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$. Taking $\lVert x \rVert_2^2$ (squaring the L2 norm) gives $x_1^2 + x_2^2 + \cdots + x_n^2$. This is the same as the dot product $x^Tx$ since
   
