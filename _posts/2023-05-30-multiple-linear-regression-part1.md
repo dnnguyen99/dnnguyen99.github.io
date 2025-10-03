@@ -111,34 +111,35 @@ Let us first compute the derivative of the loss function:
   x_n
   \end{bmatrix}$ ($x$ is a column vector). By definition, the L2 norm of $x$, $\lVert x \rVert_2 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$. Taking $\lVert x \rVert_2^2$ (squaring the L2 norm) gives $x_1^2 + x_2^2 + \cdots + x_n^2$. This is the same as the dot product $x^Tx$ since
   
-  $$\begin{align}
-  x^Tx &= \begin{bmatrix}
-  x_0\\
-  x_1\\
-  \cdot\\
-  \cdot\\
-  \cdot\\
+  $$
+  \begin{align}
+  x^T x &= 
+  \begin{bmatrix}
+  x_1 \\
+  x_2 \\
+  \vdots \\
   x_n
-  \end{bmatrix}^T \begin{bmatrix}
-  x_0\\
-  x_1\\
-  \cdot\\
-  \cdot\\
-  \cdot\\
+  \end{bmatrix}^T
+  \begin{bmatrix}
+  x_1 \\
+  x_2 \\
+  \vdots \\
   x_n
-  \end{bmatrix}\\
-  &= \begin{bmatrix}
-  x_0 & x_1 & \cdots & x_n\end{bmatrix} \begin{bmatrix}
-  x_0\\
-  x_1\\
-  \cdot\\
-  \cdot\\
-  \cdot\\
+  \end{bmatrix} \\
+  &= 
+  \begin{bmatrix}
+  x_1 & x_2 & \cdots & x_n
+  \end{bmatrix}
+  \begin{bmatrix}
+  x_1 \\
+  x_2 \\
+  \vdots \\
   x_n
-  \end{bmatrix}\\
-  &= (x_1)(x_1) + (x_2)(x_2) + \cdots + (x_n)(x_n) \\
+  \end{bmatrix} \\
+  &= x_1 x_1 + x_2 x_2 + \cdots + x_n x_n \\
   &= x_1^2 + x_2^2 + \cdots + x_n^2
-  \end{align}$$
+  \end{align}
+  $$
 So, $\lVert x \rVert_2 = x^{T}x$.
 Recall from linear algebra that $\lVert x \rVert_2^2 = x^T x$ and $(AB)^T = B^TA^T$. Then,
 
