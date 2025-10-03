@@ -141,8 +141,16 @@ x_n
 \end{align}
 $$
   
-So, $\lVert x \rVert_2 = x^{T}x$.
-Recall from linear algebra that $\lVert x \rVert_2^2 = x^T x$ and $(AB)^T = B^TA^T$. Then,
+  So, $\lVert x \rVert_2 = x^{T}x$.
+- Transpose Properties:  
+  - $(A + B)^T = A^T + B^T$  
+  - $(AB)^T = B^T A^T$  
+  - If $c$ is a scalar, then $c^T = c$
+- Partial Derivatives Properties: Given $a$ and $A$, where $a$ is a constant vector and $A$ is a constant matrix, respectively (i.e., the values of $a$ and $A$ are not dependent on the variable we're taking the derivative with respect to). Then:
+  - $\frac{\partial}{\partial \beta} (a^T \beta) = a$ AND $\frac{\partial}{\partial \beta} (\beta^T a) = a$
+  - $\frac{\partial}{\partial \beta} (\beta^T A \beta) = (A+A^T)\beta$. If $A$ is symmetric (i.e., if $A^T=A$), then $\frac{\partial}{\partial \beta} (\beta^T A \beta) = 2A\beta$
+
+Now that we have looked at the properties that we will use in the proof, let's look at the math!
 
 $$\begin{align}
 \frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2  &= \frac{\partial}{\partial \beta} (y-X \beta)^T(y-X \beta)\\
