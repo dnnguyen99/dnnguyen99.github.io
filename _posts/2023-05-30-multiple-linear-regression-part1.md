@@ -110,6 +110,7 @@ Let us first compute the derivative of the loss function:
   \cdot\\
   x_n
   \end{bmatrix}$ ($x$ is a column vector). By definition, the L2 norm of $x$, $\lVert x \rVert_2 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$. Taking $\lVert x \rVert_2^2$ (squaring the L2 norm) gives $x_1^2 + x_2^2 + \cdots + x_n^2$. This is the same as the dot product $x^Tx$ since
+  
   $$\begin{align}
   x^Tx &= \begin{bmatrix}
   x_0\\
