@@ -148,16 +148,14 @@ Back to our objective: we want to find $\hat{\beta}$ so that it is the minimizer
 
 $$\begin{align}
 \frac{\partial}{\partial \beta} L(y,\hat{y}) &=\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2 \\
-&= \frac{\partial}{\partial \beta} (y-X \beta)^T(y-X \beta)\\
+&= \frac{\partial}{\partial \beta} (y-X \beta)^T(y-X \beta) \quad \text{(since )} \lVert x \rVert_2^2 = x^{T}x\\
 &= \frac{\partial}{\partial \beta} (y^T - \beta^T X^T) (y - X \beta) \quad \text{(transpose properties)} \\
 &= \frac{\partial}{\partial \beta} y^Ty  -y^TX \beta - \beta^T X^Ty + \beta^T X^T X \beta \quad \text{(distributing)}\\
 &=\frac{\partial}{\partial \beta} y^Ty - 2 \beta^T X^T y + \beta^T X^T X \beta \quad \text{(see Note below)}\\
 &= -2X^Ty + 2X^T X \beta \quad \text{(partial deriv. properties)}
 \end{align}$$
 
-**Note:** Since $y^TX \beta \text{ is a scalar value, we know from the Transpose Properties above that } y^TX \beta = (y^TX \beta)^T = \beta^TX^Ty$. So, the terms inside the loss function become: 
-
-$-y^TX \beta - \beta^T X^Ty = -y^TX \beta - y^TX \beta = - 2 \beta^T X^T y$. 
+**Note:** Since $y^TX \beta \text{ is a scalar value, we know from the Transpose Properties above that } y^TX \beta = (y^TX \beta)^T = \beta^TX^Ty$. So, the terms inside the loss function become: $-y^TX \beta - \beta^T X^Ty = -\beta^TX^Ty - \beta^T X^Ty = - 2 \beta^T X^T y$. 
 
 To show that $y^TX \beta$ is a scalar, consider $y \in \mathbb{R}^n$ ($n\times 1$ column vector), $X \in \mathbb{R}^{n\times p}$ (our design matrix with dimensions $n \times p$), and $\beta \in \mathbb{R}^p$ ($p\times 1$ column vector). Now consider, the dimensions of the final result:
 $$y^TX\beta \in (n \times 1)^T(n \times p)(p \times 1) = (1 \times n)(n \times p)(p \times 1) = 1 \times 1$$
