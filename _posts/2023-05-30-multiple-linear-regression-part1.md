@@ -163,7 +163,7 @@ To show that $y^TX \beta$ is a scalar, consider:
   - $\beta \in \mathbb{R}^p$: a $p\times 1$ column vector.
 Now consider, the dimensions of the final result:
 
-$$y^TX\beta \in (n \times 1)^T(n \times p)(p \times 1) = (1 \times n)(n \times p)(p \times 1) = (1 \times p)(p \times 1) = 1 \times 1,\text{ which is a scalar}$$
+$$y^TX\beta \in (n \times 1)^T(n \times p)(p \times 1) = \underbrace{(1 \times n)(n \times p)}_{1 \times p}(p \times 1) = \underbrace{(1 \times p)(p \times 1)}_{1 \times 1},\text{ which is a scalar}$$
 
 Setting this derivative equal to 0 gives us the Normal Equation. This equation is used to find the closed-form solution for $\hat{\beta}$ that minimize the loss function. 
 
