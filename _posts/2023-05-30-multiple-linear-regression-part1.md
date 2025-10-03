@@ -157,14 +157,18 @@ $$\begin{align}
 
 **Note:** Since $y^TX \beta \text{ is a scalar value, we know from the Transpose Properties above that } y^TX \beta = (y^TX \beta)^T = \beta^TX^Ty$. So, the terms inside the loss function become: $-y^TX \beta - \beta^T X^Ty = -\beta^TX^Ty - \beta^T X^Ty = - 2 \beta^T X^T y$. 
 
-To show that $y^TX \beta$ is a scalar, consider $y \in \mathbb{R}^n$ ($n\times 1$ column vector), $X \in \mathbb{R}^{n\times p}$ (our design matrix with dimensions $n \times p$), and $\beta \in \mathbb{R}^p$ ($p\times 1$ column vector). Now consider, the dimensions of the final result:
+To show that $y^TX \beta$ is a scalar, consider: 
+  - $y \in \mathbb{R}^n$: a $n\times 1$ column vector
+  - $X \in \mathbb{R}^{n\times p}$: our design matrix with dimensions $n \times p$
+  - $\beta \in \mathbb{R}^p$: a $p\times 1$ column vector.
+Now consider, the dimensions of the final result:
 
-$$y^TX\beta \in (n \times 1)^T(n \times p)(p \times 1) = (1 \times n)(n \times p)(p \times 1) = (1 \times p)(p \times 1) = 1 \times 1 \quad \text{a scalar}$$
+$$y^TX\beta \in (n \times 1)^T(n \times p)(p \times 1) = (1 \times n)(n \times p)(p \times 1) = (1 \times p)(p \times 1) = 1 \times 1,\text{ which is a scalar}$$
 
 Setting this derivative equal to 0 gives us the Normal Equation. This equation is used to find the closed-form solution for $\hat{\beta}$ that minimize the loss function. 
 
-  $$-2X^Ty + 2X^TX = 0$$\\
-  $$2X^TX = 2X^Ty$$\\
+  $$-2X^Ty + 2X^TX = 0$$ \\
+  $$2X^TX = 2X^Ty$$ \\ 
   $$X^TX \beta = X^T y$$
  
 If $X^TX$ is invertible, we can solve for $\hat{\beta}$:
