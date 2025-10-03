@@ -97,7 +97,7 @@ Recall from Calculus, for a convex function $f(x)$, the derivative of $f(x)$ giv
 
 We can apply the same concept to find $\hat{\beta}$ that minimizes the loss function. Note that the loss function will have to be convex. We will omit the proof for this, but one can show that any lp norm is convex using the definition of a convex function and the triangle inequality. To find $\hat{\beta}$, we take the (partial) derivative of $L(y,\hat{y})$ with respect to $\beta$, set it equal to $0$, and solve for $\hat{\beta}$. 
   
-**Aside:** Before we go into the math, let's look at some properties that will be used.
+**Aside:** Before we go into the math, let us look at some properties that will be used.
 - $\lVert x \rVert_2^2 = x^{T}x$. To prove this, consider a vector $x \in \mathbb{R}^{n}, x = \begin{bmatrix}
   x_0\\
   x_1\\
@@ -146,7 +146,7 @@ $$
   - $\frac{\partial}{\partial \beta} (a^T \beta) = a$ AND $\frac{\partial}{\partial \beta} (\beta^T a) = a$
   - $\frac{\partial}{\partial \beta} (\beta^T A \beta) = (A+A^T)\beta$. If $A$ is symmetric (i.e., if $A^T=A$), then $\frac{\partial}{\partial \beta} (\beta^T A \beta) = 2A\beta$
 
-Now that we have looked at the properties, let us first compute the derivative of the loss function: 
+Back to our objective: we want to find $\hat{\beta}$ so that it is the minimizer of the loss function. To do this, let us first compute the partial derivative of the loss function $w.r.t$ $\beta$: 
 
   $$\frac{\partial}{\partial \beta} L(y,\hat{y}) =\frac{\partial}{\partial \beta} \lVert y-X \beta \rVert_2^2 $$
 
@@ -156,7 +156,7 @@ $$\begin{align}
 &= \frac{\partial}{\partial \beta} (y^T - \beta^T X^T) (y - X \beta) \quad \text{(transpose properties)} \\
 &= \frac{\partial}{\partial \beta} y^Ty  -y^TX \beta - \beta^T X^Ty + \beta^T X^T X \beta \quad \text{(distributing)}\\
 &=\frac{\partial}{\partial \beta} y^Ty - 2 \beta^T X^T y + \beta^T X^T X \beta \quad \text{(see Note below)}\\
-&= -2X^Ty + 2X^T X \beta
+&= -2X^Ty + 2X^T X \beta \quad \text{(partial deriv. properties)}
 \end{align}$$
 
 **Note:** Since $y^TX \beta \text{ is a scalar value, } y^TX \beta = (y^TX \beta)^T = \beta^TX^Ty$. So, $-y^TX \beta - \beta^T X^Ty = - 2 \beta^T X^T y$. 
